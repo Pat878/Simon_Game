@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 
  var letsPlay, remove, playerMove;
@@ -21,18 +20,22 @@ $(document).ready(function(){
     snd.play();
     setTimeout(function () {
     $(".inner4").removeClass('glow');
-}, 100);
-    playerMove();
+}, 500);
 
 }
 
   $(".start").click(function(){
     letsPlay();
+    playerMove();
   })
 
   function playerMove(){
-  /*If player clicks the correct div alert */
 
+    var timer = setTimeout(function(){alert("Too slow!")}, 5000)
+
+    var checkMove = document.getElementById("test").addEventListener("click", function() {
+clearTimeout(timer);
+      alert("You're doing great.") })
   }
 
 
