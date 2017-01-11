@@ -73,3 +73,12 @@ h1 {
    padding: 25px;
    margin: 25px;
 }
+
+.glow {
+border: 2px solid white;
+
+}
+
+.noglow {
+  border: none;
+}
