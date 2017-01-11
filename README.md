@@ -1,3 +1,3 @@
-A simple Simon Game
-My final project for Free Code Camp's front end certificate!
+A simple Simon Game<br>
+My final project for Free Code Camp's front end certificate!<br>
 A work in progress...
