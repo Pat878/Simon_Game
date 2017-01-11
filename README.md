@@ -1,2 +1,3 @@
-My Simon Game for Free Code Camp!
+A simple Simon Game
+My final project for Free Code Camp's front end certificate!
 A work in progress...
