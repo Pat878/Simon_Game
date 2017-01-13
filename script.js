@@ -13,32 +13,39 @@ $(document).ready(function(){
 
   }); */
 
-
-
-  function letsPlay(){
-  var firstMove = $(".inner4").addClass("glow")
+function firstMove() { $(".inner4").addClass("glow")
     snd.play();
     setTimeout(function () {
     $(".inner4").removeClass('glow');
-}, 500);
+}, 500)   }
 
-    if (turn == 1) {
-      setTimeout(function() {firstMove}, 500);
-
-      $(".inner3").addClass("glow")
+     function secondMove() {    $(".inner3").addClass("glow")
     snd.play();
     setTimeout(function () {
     $(".inner3").removeClass('glow');
-}, 500);
-    }
+}, 1000) };
 
-}
+
+
+  function letsPlay(){
+
+
+  if (turn == 0) {firstMove();}
+
+    else if (turn == 1) {
+      firstMove();
+   setTimeout(function(){secondMove()}, 1000)
+
+        }
+
+};
 
   function playerMove(){
 
     var timer = setTimeout(function(){alert("Too slow!")}, 5000)
 
     var checkMove = document.getElementById("test").addEventListener("click", function() {
+
       $(".inner4").addClass("glow")
     snd.play();
     setTimeout(function () {
@@ -47,10 +54,10 @@ $(document).ready(function(){
 clearTimeout(timer);
       turn = 1
       setTimeout(
-            function() {
-                letsPlay();
+          function() {
+               letsPlay();
             },
-            1000);
+          2000);
 
         })
   }
