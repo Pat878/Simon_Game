@@ -1,7 +1,7 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
   /* var letsPlay, remove, playerMove; */
- var turn = 0;
+  var turn = 0;
   var snd = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 
   /* $(".inner4").mouseover(function() {
@@ -13,62 +13,67 @@ $(document).ready(function(){
 
   }); */
 
-function firstMove() { $(".inner4").addClass("glow")
+  function firstMove() {
+    $(".inner4").addClass("glow")
     snd.play();
-    setTimeout(function () {
-    $(".inner4").removeClass('glow');
-}, 500)   }
+    setTimeout(function() {
+      $(".inner4").removeClass('glow');
+    }, 500)
+  }
 
-     function secondMove() {    $(".inner3").addClass("glow")
+  function secondMove() {
+    $(".inner3").addClass("glow")
     snd.play();
-    setTimeout(function () {
-    $(".inner3").removeClass('glow');
-}, 1000) };
+    setTimeout(function() {
+      $(".inner3").removeClass('glow');
+    }, 1000)
+  };
 
+  function letsPlay() {
 
+    switch (true) {
 
-  function letsPlay(){
+      case turn == 0:
+        firstMove();
+        break;
 
+      case turn == 1:
+        firstMove();
+        setTimeout(function() {
+          secondMove()
+        }, 1000)
+        break;
+    }
 
-  if (turn == 0) {firstMove();}
+  };
 
-    else if (turn == 1) {
-      firstMove();
-   setTimeout(function(){secondMove()}, 1000)
+  function playerMove() {
 
-        }
-
-};
-
-  function playerMove(){
-
-    var timer = setTimeout(function(){alert("Too slow!")}, 5000)
+    var timer = setTimeout(function() {
+      alert("Too slow!")
+    }, 5000)
 
     var checkMove = document.getElementById("test").addEventListener("click", function() {
 
       $(".inner4").addClass("glow")
-    snd.play();
-    setTimeout(function () {
-    $(".inner4").removeClass('glow');
-}, 500);
-clearTimeout(timer);
+      snd.play();
+      setTimeout(function() {
+        $(".inner4").removeClass('glow');
+      }, 500);
+      clearTimeout(timer);
       turn = 1
       setTimeout(
-          function() {
-               letsPlay();
-            },
-          2000);
+        function() {
+          letsPlay();
+        },
+        2000);
 
-        })
+    })
   }
 
-
-  $(".start").click(function(){
+  $(".start").click(function() {
     letsPlay();
     playerMove();
   })
-
-
-
 
 });
