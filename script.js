@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   /* var letsPlay, remove, playerMove; */
   var computerTurn = 0;
+  var playerTurn = 0;
   var snd = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 
   function firstMove() {
@@ -17,7 +18,7 @@ $(document).ready(function() {
     snd.play();
     setTimeout(function() {
       $("#inner2").removeClass('glow');
-    }, 1000)
+    }, 500)
   };
 
   function thirdMove() {
@@ -25,7 +26,7 @@ $(document).ready(function() {
     snd.play();
     setTimeout(function() {
       $("#inner3").removeClass('glow');
-    }, 1000)
+    }, 500)
   };
 
   function fourthMove() {
@@ -33,7 +34,7 @@ $(document).ready(function() {
     snd.play();
     setTimeout(function() {
       $("#inner4").removeClass('glow');
-    }, 1000)
+    }, 500)
   };
 
   function letsPlay() {
@@ -49,7 +50,9 @@ $(document).ready(function() {
         setTimeout(function() {
           secondMove()
         }, 1000)
-        break;
+        playerTurn = 1;
+        playerMove();
+                break;
     }
 
   };
@@ -60,26 +63,39 @@ $(document).ready(function() {
       alert("Too slow!")
     }, 5000)
 
-     document.getElementById("inner1").addEventListener("click", function() {
+ switch(true) {
+   case playerTurn == 0:
+       document.getElementById("inner1").addEventListener("click", function() {
 firstMove();
       clearTimeout(timer);
-      computerTurn = 1
+      computerTurn = 1;
       setTimeout( function() {
           letsPlay();}, 2000); })
+     break;
 
-    document.querySelectorAll("inner1 inner2").addEventListener("click", function() {
-firstMove();
-      secondMove();
-      clearTimeout(timer);
-      computerTurn = 1
+   case playerTurn == 1:
+
+       document.getElementById("inner1").addEventListener("click", function() {
+       firstMove();       })
+     document.getElementById("inner2").addEventListener("click", function() {
+       secondMove();
+     clearTimeout(timer);
+      computerTurn = 2;
       setTimeout( function() {
-          letsPlay();}, 2000); })
+          letsPlay();}, 2000);
+     })
+
+
+     break;
+            }
+
 
   };
 
   $(".start").click(function() {
     letsPlay();
     playerMove();
+    
   })
 
 });
