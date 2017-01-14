@@ -5,18 +5,18 @@ $(document).ready(function() {
   var snd = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 
   function firstMove() {
-    $(".inner4").addClass("glow")
+    $("#inner4").addClass("glow")
     snd.play();
     setTimeout(function() {
-      $(".inner4").removeClass('glow');
+      $("#inner4").removeClass('glow');
     }, 500)
   }
 
   function secondMove() {
-    $(".inner3").addClass("glow")
+    $("#inner3").addClass("glow")
     snd.play();
     setTimeout(function() {
-      $(".inner3").removeClass('glow');
+      $("#inner3").removeClass('glow');
     }, 1000)
   };
 
@@ -44,12 +44,12 @@ $(document).ready(function() {
       alert("Too slow!")
     }, 5000)
 
-    var checkMove = document.getElementById("test").addEventListener("click", function() {
+    var checkMove = document.getElementById("inner4").addEventListener("click", function() {
 
-      $(".inner4").addClass("glow")
+      $("#inner4").addClass("glow")
       snd.play();
       setTimeout(function() {
-        $(".inner4").removeClass('glow');
+        $("#inner4").removeClass('glow');
       }, 500);
       clearTimeout(timer);
       turn = 1
