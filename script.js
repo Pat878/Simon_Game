@@ -62,15 +62,23 @@ $(document).ready(function() {
     function listenForFirstMove() { document.getElementById("inner1").addEventListener("click", function() {
           firstMove();
         }) }
+
     function listenForSecondMove() { document.getElementById("inner1").addEventListener("click", function() {
           secondMove();
         }) }
+
     function listenForThirdMove() { document.getElementById("inner1").addEventListener("click", function() {
           thirdMove();
         }) }
+
     function listenForFourthMove() { document.getElementById("inner1").addEventListener("click", function() {
           fourthMove();
         }) }
+
+
+      function startComputerMove() {    setTimeout(function() {
+            letsPlay()
+          }, 2000) }
 
     var timer = setTimeout(function() {
       alert("Too slow!")
@@ -78,15 +86,11 @@ $(document).ready(function() {
 
     switch (true) {
       case playerTurn == 0:
-
-       document.getElementById("inner1").addEventListener("click", function() {
-          firstMove();
-
-          clearTimeout(timer);
+    document.getElementById("inner1").addEventListener("click", function() {
+      firstMove();
+           clearTimeout(timer);
           computerTurn = 1;
-          setTimeout(function() {
-            letsPlay();
-          }, 2000); })
+         startComputerMove() })
 
         break;
 
@@ -96,9 +100,7 @@ $(document).ready(function() {
           secondMove();
           clearTimeout(timer);
           computerTurn = 2;
-          setTimeout(function() {
-            letsPlay();
-          }, 2000);
+          startComputerMove()
         })
 
         break;
