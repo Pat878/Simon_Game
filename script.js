@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   /* var letsPlay, remove, playerMove; */
-  var turn = 0;
+  var computerTurn = 0;
   var snd = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 
   function firstMove() {
@@ -40,11 +40,11 @@ $(document).ready(function() {
 
     switch (true) {
 
-      case turn == 0:
+      case computerTurn == 0:
         firstMove();
         break;
 
-      case turn == 1:
+      case computerTurn == 1:
         firstMove();
         setTimeout(function() {
           secondMove()
@@ -60,18 +60,22 @@ $(document).ready(function() {
       alert("Too slow!")
     }, 5000)
 
-    var checkMove = document.getElementById("inner1").addEventListener("click", function() {
+     document.getElementById("inner1").addEventListener("click", function() {
 firstMove();
       clearTimeout(timer);
-      turn = 1
-      setTimeout(
-        function() {
-          letsPlay();
-        },
-        2000);
+      computerTurn = 1
+      setTimeout( function() {
+          letsPlay();}, 2000); })
 
-    })
-  }
+    document.querySelectorAll("inner1 inner2").addEventListener("click", function() {
+firstMove();
+      secondMove();
+      clearTimeout(timer);
+      computerTurn = 1
+      setTimeout( function() {
+          letsPlay();}, 2000); })
+
+  };
 
   $(".start").click(function() {
     letsPlay();
