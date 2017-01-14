@@ -12,7 +12,7 @@ h1 {
             position:relative;
 }
 
-.inner {
+#inner1 {
   background-color:#ffff00;
   top: 9%; right:20%;
   width:40%;
@@ -21,7 +21,7 @@ h1 {
 }
 
 
-.inner2 {
+#inner2 {
             background-color:#00ff80;
             bottom: 31%; left:20%;
             width:40%;
@@ -29,7 +29,7 @@ h1 {
             position: relative;
 }
 
-.inner3 {
+#inner3 {
             background-color:#8000ff;
             bottom:28%; left:20%;
             width:40%;
@@ -37,7 +37,7 @@ h1 {
             position: relative;
 }
 
-.inner4 {
+#inner4 {
             background-color:#ff0000;
             bottom: 68%; right:20%;
             width:40%;
