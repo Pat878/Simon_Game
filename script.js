@@ -4,15 +4,6 @@ $(document).ready(function() {
   var turn = 0;
   var snd = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 
-  /* $(".inner4").mouseover(function() {
-  $(this).addClass("glow");
-    snd.play();
-      })
-  .mouseout(function(){
-    $(this).removeClass("glow");
-
-  }); */
-
   function firstMove() {
     $(".inner4").addClass("glow")
     snd.play();
