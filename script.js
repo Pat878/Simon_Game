@@ -20,6 +20,22 @@ $(document).ready(function() {
     }, 1000)
   };
 
+  function thirdMove() {
+    $("#inner3").addClass("glow")
+    snd.play();
+    setTimeout(function() {
+      $("#inner3").removeClass('glow');
+    }, 1000)
+  };
+
+  function fourthMove() {
+    $("#inner4").addClass("glow")
+    snd.play();
+    setTimeout(function() {
+      $("#inner4").removeClass('glow');
+    }, 1000)
+  };
+
   function letsPlay() {
 
     switch (true) {
