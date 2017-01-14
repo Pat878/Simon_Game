@@ -59,27 +59,39 @@ $(document).ready(function() {
 
   function playerMove() {
 
+    function listenForFirstMove() { document.getElementById("inner1").addEventListener("click", function() {
+          firstMove();
+        }) }
+    function listenForSecondMove() { document.getElementById("inner1").addEventListener("click", function() {
+          secondMove();
+        }) }
+    function listenForThirdMove() { document.getElementById("inner1").addEventListener("click", function() {
+          thirdMove();
+        }) }
+    function listenForFourthMove() { document.getElementById("inner1").addEventListener("click", function() {
+          fourthMove();
+        }) }
+
     var timer = setTimeout(function() {
       alert("Too slow!")
     }, 5000)
 
     switch (true) {
       case playerTurn == 0:
-        document.getElementById("inner1").addEventListener("click", function() {
+
+       document.getElementById("inner1").addEventListener("click", function() {
           firstMove();
+
           clearTimeout(timer);
           computerTurn = 1;
           setTimeout(function() {
             letsPlay();
-          }, 2000);
-        })
+          }, 2000); })
+
         break;
 
       case playerTurn == 1:
-
-        document.getElementById("inner1").addEventListener("click", function() {
-          firstMove();
-        })
+        listenForFirstMove();
         document.getElementById("inner2").addEventListener("click", function() {
           secondMove();
           clearTimeout(timer);
