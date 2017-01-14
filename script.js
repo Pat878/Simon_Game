@@ -61,12 +61,7 @@ $(document).ready(function() {
     }, 5000)
 
     var checkMove = document.getElementById("inner1").addEventListener("click", function() {
-
-      $("#inner1").addClass("glow")
-      snd.play();
-      setTimeout(function() {
-        $("#inner1").removeClass('glow');
-      }, 500)
+firstMove();
       clearTimeout(timer);
       turn = 1
       setTimeout(
