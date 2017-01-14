@@ -52,7 +52,7 @@ $(document).ready(function() {
         }, 1000)
         playerTurn = 1;
         playerMove();
-                break;
+        break;
     }
 
   };
@@ -63,39 +63,40 @@ $(document).ready(function() {
       alert("Too slow!")
     }, 5000)
 
- switch(true) {
-   case playerTurn == 0:
-       document.getElementById("inner1").addEventListener("click", function() {
-firstMove();
-      clearTimeout(timer);
-      computerTurn = 1;
-      setTimeout( function() {
-          letsPlay();}, 2000); })
-     break;
+    switch (true) {
+      case playerTurn == 0:
+        document.getElementById("inner1").addEventListener("click", function() {
+          firstMove();
+          clearTimeout(timer);
+          computerTurn = 1;
+          setTimeout(function() {
+            letsPlay();
+          }, 2000);
+        })
+        break;
 
-   case playerTurn == 1:
+      case playerTurn == 1:
 
-       document.getElementById("inner1").addEventListener("click", function() {
-       firstMove();       })
-     document.getElementById("inner2").addEventListener("click", function() {
-       secondMove();
-     clearTimeout(timer);
-      computerTurn = 2;
-      setTimeout( function() {
-          letsPlay();}, 2000);
-     })
+        document.getElementById("inner1").addEventListener("click", function() {
+          firstMove();
+        })
+        document.getElementById("inner2").addEventListener("click", function() {
+          secondMove();
+          clearTimeout(timer);
+          computerTurn = 2;
+          setTimeout(function() {
+            letsPlay();
+          }, 2000);
+        })
 
-
-     break;
-            }
-
+        break;
+    }
 
   };
 
   $(".start").click(function() {
     letsPlay();
     playerMove();
-    
   })
 
 });
