@@ -82,11 +82,7 @@ $(document).ready(function() {
 
     function listenForFirstMove() {
       document.getElementById("inner1").addEventListener("click", function() {
-        $("#inner1").addClass("glow")
-        snd1.play();
-        setTimeout(function() {
-          $("#inner1").removeClass('glow');
-        }, 500)
+                firstMove();
       })
     }
 
