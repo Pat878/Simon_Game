@@ -18,7 +18,10 @@ h1 {
   width:40%;
   height:40%;
   position: relative;
+
 }
+
+
 
 
 #inner2 {
@@ -74,10 +77,27 @@ h1 {
    margin: 25px;
 }
 
-.glow {
-border: 2px solid white;
+#inner1:active {
+    border: 2px solid white;
 
 }
+
+#inner2:active {
+    border: 2px solid white;
+
+}
+
+#inner3:active {
+    border: 2px solid white;
+
+}
+
+#inner4:active {
+    border: 2px solid white;
+
+}
+
+.glow { border: 2px solid white;}
 
 .noglow {
   border: none;
