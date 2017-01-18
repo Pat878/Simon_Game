@@ -1,3 +1,30 @@
+/*To generate an array with a random sequence of numbers, I ussed the Fisher-Yates (aka Knuth) Shuffle.
+https://bost.ocks.org/mike/shuffle/
+https://git.daplie.com/Daplie/knuth-shuffle
+https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+*/
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+var arr = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4];
+arr = shuffle(arr);
+var newArr = arr.slice(0, 4)
+console.log(arr);
+
 $(document).ready(function() {
 
   /* var letsPlay, remove, playerMove; */
@@ -41,66 +68,74 @@ $(document).ready(function() {
   };
 
   function letsPlay() {
-    playerTurn++;
+
+    playerTurn++
     switch (true) {
 
       case computerTurn == 1:
-
-        firstMove();
-        console.log(playerTurn)
+        if (arr[0] == 1) {
+          firstMove()
+        } else if (arr[0] == 2) {
+          secondMove()
+        } else if (arr[0] == 3) {
+          thirdMove()
+        } else if (arr[0] == 4) {
+          fourthMove()
+        }
         playerMove();
+        console.log(arr[0])
         break;
 
       case computerTurn == 2:
-
-        firstMove();
-        console.log(playerTurn)
-        setTimeout(function() {
-          secondMove()
-        }, 1000)
-        playerMove();
+        console.log(sequence.push(move))
         break;
 
       case computerTurn == 3:
-
-        firstMove();
-        console.log(playerTurn);
-        setTimeout(function() {
-          secondMove()
-        }, 1000)
-        setTimeout(function() {
-          thirdMove()
-        }, 2000)
-        playerMove();
+        console.log(sequence.push(move))
+        playerMove()
         break;
-
     }
 
   };
 
   function playerMove() {
 
+    var playerArray = []
+
     function listenForFirstMove() {
+
       document.getElementById("inner1").addEventListener("click", function() {
-                firstMove();
+        playerArray.push(1)
+        snd1.play()
+        firstMove();
+        console.log(playerArray);
       })
     }
 
     function listenForSecondMove() {
       document.getElementById("inner1").addEventListener("click", function() {
+        playerArray.push(2)
+        snd1.play()
         secondMove();
+        console.log(playerArray);
       })
     }
 
     function listenForThirdMove() {
       document.getElementById("inner1").addEventListener("click", function() {
+        playerArray.push(3)
+        snd1.play()
         thirdMove();
+        console.log(playerArray);
       })
     }
 
     function listenForFourthMove() {
       document.getElementById("inner1").addEventListener("click", function() {
+        playerArray.push(4)
+        snd1.play()
         fourthMove();
+        console.log(playerArray);
       })
     }
 
@@ -118,11 +153,20 @@ $(document).ready(function() {
 
     switch (true) {
       case playerTurn == 1:
-        document.getElementById("inner1").addEventListener("click", function() {
-          snd1.play();
+        if (arr[0] == 1) {
+          listenForFirstMove();
           clearTimeout(timer);
-          startComputerMove()
-        });
+        } else if (arr[0] == 2) {
+          listenForSecondMove();
+          clearTimeout(timer);
+        } else if (arr[0] == 3) {
+          listenForThirdMove();
+          clearTimeout(timer);
+        } else if (arr[0] == 4) {
+listenForFourthMove();
+          clearTimeout(timer);
+        }
+
         break;
 
       case playerTurn == 2:
@@ -137,8 +181,7 @@ $(document).ready(function() {
 
       case playerTurn == 3:
 
-        computerTurn = 1000
-        playerTurn = 1000
+        letsPlay()
         clearTimeout(timer);
         break;
     }
