@@ -27,7 +27,6 @@ $(document).ready(function() {
 
   /* var letsPlay, remove, playerMove; */
 
-
   var computerTurn = 1;
   var playerTurn = 0;
   var snd1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
@@ -67,66 +66,187 @@ $(document).ready(function() {
     }, 500)
   };
 
-
-
   function letsPlay() {
 
     playerTurn++
-var num
+    var num;
 
-function call() {
- (function theLoop(i) {
-  setTimeout(function () {
-    if (arr[i] == 1) {firstMove()
-                      console.log(1)}
+    function call() {
+      var i = 0
 
-    if (arr[i] == 2) {secondMove()
-                     console.log(2)}
-        if (arr[i] == 3) {thirdMove()
-                         console.log(3)}
-if (arr[i] == 4){                    fourthMove()
-                     console.log(4)}
+      function theLoop() {
+        setTimeout(function() {
+          if (arr[i] == 1) {
+            firstMove()
+            console.log(1)
+          }
 
-    if (--i) {          // If i > 0, keep going
-      theLoop(i);       // Call the loop again, and pass it the current value of i
+          if (arr[i] == 2) {
+            secondMove()
+            console.log(2)
+          }
+          if (arr[i] == 3) {
+            thirdMove()
+            console.log(3)
+          }
+          if (arr[i] == 4) {
+            fourthMove()
+            console.log(4)
+          }
+          i++;
+          if (i < num) {
+            theLoop();
+          }
+        }, 1000)
+      }
+    theLoop()
     }
-  }, 1000);
-})(num); }
 
+    switch (true) {
 
-    switch(true) {
-
-    case computerTurn == 1:
-        num = 1
-call()
-       playerMove();
+      case computerTurn == 1:
+        num = 1;
+        call()
+        playerMove();
         break;
 
       case computerTurn == 2:
-        alert("ys")
-               }
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 3:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 4:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 5:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 6:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 7:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 8:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 9:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 10:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 11:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 12:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 13:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 14:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 15:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+        case computerTurn == 16:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+                case computerTurn == 17:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+                case computerTurn == 18:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+                case computerTurn == 19:
+        num = 2;
+        call()
+        playerMove();
+        break;
+
+                case computerTurn == 20:
+        num = 2;
+        call()
+        playerMove();
+        break;
+    }
 
   };
 
   function playerMove() {
-var playerArray = []
+
+    var playerArray = []
 
     function listenForFirstMove() {
-
       document.getElementById("inner1").addEventListener("click", function() {
         playerArray.push(1)
         snd1.play()
         firstMove();
         checkArray()
-      console.log(playerArray[0])})
-      }
+        console.log(playerArray[0])
+      })
+    }
 
     function listenForSecondMove() {
       document.getElementById("inner2").addEventListener("click", function() {
         playerArray.push(2)
         snd2.play()
         secondMove();
-      checkArray
+        checkArray();
       })
     }
 
@@ -135,7 +255,7 @@ var playerArray = []
         playerArray.push(3)
         snd3.play()
         thirdMove();
-      checkArray()
+        checkArray();
       })
     }
 
@@ -144,7 +264,7 @@ var playerArray = []
         playerArray.push(4)
         snd4.play()
         fourthMove();
-        checkArray()
+        checkArray();
       })
     }
 
@@ -154,14 +274,17 @@ var playerArray = []
       }, 2000)
     }
 
-    var timer = setTimeout(function() {
-      alert("Too slow!")
-    }, 5000)
+    /*  var timer = setTimeout(function() {
+        alert("Too slow!")
+      }, 5000) */
 
-    var indexToCheck = 1;
-  function checkArray(){
-    if(playerArray[0] == arr[indexToCheck]){alert(1)}
-  }
+    var indexToCheck = 0;
+
+    function checkArray() {
+      if (playerArray[0] == arr[indexToCheck]) {
+        letsPlay()
+      }
+    }
 
     computerTurn++
 
@@ -169,10 +292,16 @@ var playerArray = []
       case playerTurn == 1:
         listenForFirstMove();
         listenForSecondMove();
-        listenForThirdMove();                       listenForFourthMove();
-
+        listenForThirdMove();
+        listenForFourthMove();
         break;
-
+      case playerTurn == 2:
+        indexToCheck = 1;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
 
     }
 
