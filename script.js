@@ -280,8 +280,11 @@ $(document).ready(function() {
     var indexToCheck = 0;
 
     function checkArray() {
+      var currentArray = arr.slice(indexToCheck)
+
       if (playerArray[0] == arr[indexToCheck]) {
         letsPlay()
+        playerArray = []
       }
     }
 
@@ -297,6 +300,166 @@ $(document).ready(function() {
 
       case playerTurn == 2:
         indexToCheck = 1;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+        case playerTurn == 3:
+        indexToCheck = 2;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+        case playerTurn == 4:
+        indexToCheck = 3;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 5:
+        indexToCheck = 4;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 6:
+        indexToCheck = 5;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 7:
+        indexToCheck = 6;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 8:
+        indexToCheck = 7;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 9:
+        indexToCheck = 8;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 10:
+        indexToCheck = 9;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 11:
+        indexToCheck = 10;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 12:
+        indexToCheck = 11;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 13:
+        indexToCheck = 12;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 14:
+        indexToCheck = 13;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 15:
+        indexToCheck = 14;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 16:
+        indexToCheck = 15;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 17:
+        indexToCheck = 16;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 18:
+        indexToCheck = 17;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 19:
+        indexToCheck = 18;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        break;
+
+
+        case playerTurn == 20:
+        indexToCheck = 19;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
