@@ -2,6 +2,8 @@
 https://bost.ocks.org/mike/shuffle/
 https://git.daplie.com/Daplie/knuth-shuffle
 https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+I used this resource to loop through the array with pauses: https://stackoverflow.com/questions/3583724/how-do-i-add-a-delay-in-a-javascript-loop
 */
 
 function shuffle(array) {
@@ -97,7 +99,7 @@ $(document).ready(function() {
           if (i < num) {
             theLoop();
           }
-        }, 1000)
+        }, 2000)
       }
     theLoop()
     }
@@ -231,6 +233,18 @@ $(document).ready(function() {
 
     var playerArray = []
 
+    var indexToCheck = 0;
+
+    function checkArray() {
+      var currentArray = arr.slice(indexToCheck)
+
+      if (playerArray[0] == arr[indexToCheck]) {
+        playerArray = []
+        letsPlay()
+      }
+    }
+
+
     function listenForFirstMove() {
       document.getElementById("inner1").addEventListener("click", function() {
         playerArray.push(1)
@@ -277,16 +291,7 @@ $(document).ready(function() {
         alert("Too slow!")
       }, 5000) */
 
-    var indexToCheck = 0;
 
-    function checkArray() {
-      var currentArray = arr.slice(indexToCheck)
-
-      if (playerArray[0] == arr[indexToCheck]) {
-        letsPlay()
-        playerArray = []
-      }
-    }
 
     computerTurn++
 
