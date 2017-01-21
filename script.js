@@ -117,109 +117,109 @@ $(document).ready(function() {
         break;
 
         case computerTurn == 3:
-        num = 2;
+        num = 3;
         call()
         playerMove();
         break;
 
         case computerTurn == 4:
-        num = 2;
+        num = 4;
         call()
         playerMove();
         break;
 
         case computerTurn == 5:
-        num = 2;
+        num = 5;
         call()
         playerMove();
         break;
 
         case computerTurn == 6:
-        num = 2;
+        num = 6;
         call()
         playerMove();
         break;
 
         case computerTurn == 7:
-        num = 2;
+        num = 7;
         call()
         playerMove();
         break;
 
         case computerTurn == 8:
-        num = 2;
+        num = 8;
         call()
         playerMove();
         break;
 
         case computerTurn == 9:
-        num = 2;
+        num = 9;
         call()
         playerMove();
         break;
 
         case computerTurn == 10:
-        num = 2;
+        num = 10;
         call()
         playerMove();
         break;
 
         case computerTurn == 11:
-        num = 2;
+        num = 11;
         call()
         playerMove();
         break;
 
         case computerTurn == 12:
-        num = 2;
+        num = 12;
         call()
         playerMove();
         break;
 
         case computerTurn == 13:
-        num = 2;
+        num = 13;
         call()
         playerMove();
         break;
 
         case computerTurn == 14:
-        num = 2;
+        num = 14;
         call()
         playerMove();
         break;
 
         case computerTurn == 15:
-        num = 2;
+        num = 15;
         call()
         playerMove();
         break;
 
         case computerTurn == 16:
-        num = 2;
+        num = 16;
         call()
         playerMove();
         break;
 
-                case computerTurn == 17:
-        num = 2;
+        case computerTurn == 17:
+        num = 17;
         call()
         playerMove();
         break;
 
-                case computerTurn == 18:
-        num = 2;
+        case computerTurn == 18:
+        num = 18;
         call()
         playerMove();
         break;
 
-                case computerTurn == 19:
-        num = 2;
+        case computerTurn == 19:
+        num = 19;
         call()
         playerMove();
         break;
 
-                case computerTurn == 20:
-        num = 2;
+        case computerTurn == 20:
+        num = 20;
         call()
         playerMove();
         break;
@@ -237,7 +237,6 @@ $(document).ready(function() {
         snd1.play()
         firstMove();
         checkArray()
-        console.log(playerArray[0])
       })
     }
 
@@ -295,6 +294,7 @@ $(document).ready(function() {
         listenForThirdMove();
         listenForFourthMove();
         break;
+
       case playerTurn == 2:
         indexToCheck = 1;
         listenForFirstMove();
