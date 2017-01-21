@@ -74,24 +74,20 @@ $(document).ready(function() {
     var num;
 
     function call() {
-      var i = 0
+      var i = 0;
 
       function theLoop() {
         setTimeout(function() {
           if (arr[i] == 1) {
             firstMove()
             console.log(1)
-          }
-
-          if (arr[i] == 2) {
+          } else if (arr[i] == 2) {
             secondMove()
             console.log(2)
-          }
-          if (arr[i] == 3) {
+          } else if (arr[i] == 3) {
             thirdMove()
             console.log(3)
-          }
-          if (arr[i] == 4) {
+          } else if (arr[i] == 4) {
             fourthMove()
             console.log(4)
           }
@@ -99,9 +95,9 @@ $(document).ready(function() {
           if (i < num) {
             theLoop();
           }
-        }, 2000)
+        }, 1000)
       }
-    theLoop()
+      theLoop()
     }
 
     switch (true) {
@@ -118,109 +114,109 @@ $(document).ready(function() {
         playerMove();
         break;
 
-        case computerTurn == 3:
+      case computerTurn == 3:
         num = 3;
         call()
         playerMove();
         break;
 
-        case computerTurn == 4:
+      case computerTurn == 4:
         num = 4;
         call()
         playerMove();
         break;
 
-        case computerTurn == 5:
+      case computerTurn == 5:
         num = 5;
         call()
         playerMove();
         break;
 
-        case computerTurn == 6:
+      case computerTurn == 6:
         num = 6;
         call()
         playerMove();
         break;
 
-        case computerTurn == 7:
+      case computerTurn == 7:
         num = 7;
         call()
         playerMove();
         break;
 
-        case computerTurn == 8:
+      case computerTurn == 8:
         num = 8;
         call()
         playerMove();
         break;
 
-        case computerTurn == 9:
+      case computerTurn == 9:
         num = 9;
         call()
         playerMove();
         break;
 
-        case computerTurn == 10:
+      case computerTurn == 10:
         num = 10;
         call()
         playerMove();
         break;
 
-        case computerTurn == 11:
+      case computerTurn == 11:
         num = 11;
         call()
         playerMove();
         break;
 
-        case computerTurn == 12:
+      case computerTurn == 12:
         num = 12;
         call()
         playerMove();
         break;
 
-        case computerTurn == 13:
+      case computerTurn == 13:
         num = 13;
         call()
         playerMove();
         break;
 
-        case computerTurn == 14:
+      case computerTurn == 14:
         num = 14;
         call()
         playerMove();
         break;
 
-        case computerTurn == 15:
+      case computerTurn == 15:
         num = 15;
         call()
         playerMove();
         break;
 
-        case computerTurn == 16:
+      case computerTurn == 16:
         num = 16;
         call()
         playerMove();
         break;
 
-        case computerTurn == 17:
+      case computerTurn == 17:
         num = 17;
         call()
         playerMove();
         break;
 
-        case computerTurn == 18:
+      case computerTurn == 18:
         num = 18;
         call()
         playerMove();
         break;
 
-        case computerTurn == 19:
+      case computerTurn == 19:
         num = 19;
         call()
         playerMove();
         break;
 
-        case computerTurn == 20:
+      case computerTurn == 20:
         num = 20;
         call()
         playerMove();
@@ -233,24 +229,15 @@ $(document).ready(function() {
 
     var playerArray = []
 
-    var indexToCheck = 0;
-
-    function checkArray() {
-      var currentArray = arr.slice(indexToCheck)
-
-      if (playerArray[0] == arr[indexToCheck]) {
-        playerArray = []
-        letsPlay()
-      }
-    }
-
+    var indexToCheck = 1;
 
     function listenForFirstMove() {
+
+      computerTurn++
       document.getElementById("inner1").addEventListener("click", function() {
         playerArray.push(1)
         snd1.play()
         firstMove();
-        checkArray()
       })
     }
 
@@ -259,7 +246,6 @@ $(document).ready(function() {
         playerArray.push(2)
         snd2.play()
         secondMove();
-        checkArray();
       })
     }
 
@@ -268,7 +254,6 @@ $(document).ready(function() {
         playerArray.push(3)
         snd3.play()
         thirdMove();
-        checkArray();
       })
     }
 
@@ -277,23 +262,27 @@ $(document).ready(function() {
         playerArray.push(4)
         snd4.play()
         fourthMove();
-        checkArray();
       })
     }
 
     function startComputerMove() {
       setTimeout(function() {
-        letsPlay()
-      }, 2000)
+        var currentArray = arr.slice(0, indexToCheck)
+        var currentPlayerArray =
+          playerArray.slice(0, indexToCheck)
+        console.log(currentArray)
+        console.log(currentPlayerArray, true)
+        if (currentPlayerArray.toString() == currentArray.toString()) {
+          letsPlay()
+        } else {
+          alert("wrong")
+        }
+      }, 10000)
     }
 
     /*  var timer = setTimeout(function() {
         alert("Too slow!")
       }, 5000) */
-
-
-
-    computerTurn++
 
     switch (true) {
       case playerTurn == 1:
@@ -301,174 +290,199 @@ $(document).ready(function() {
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+
+        startComputerMove();
+
         break;
 
       case playerTurn == 2:
-        indexToCheck = 1;
-        listenForFirstMove();
-        listenForSecondMove();
-        listenForThirdMove();
-        listenForFourthMove();
-        break;
-
-        case playerTurn == 3:
         indexToCheck = 2;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-        case playerTurn == 4:
+      case playerTurn == 3:
         indexToCheck = 3;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 5:
+      case playerTurn == 4:
         indexToCheck = 4;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 6:
+      case playerTurn == 5:
         indexToCheck = 5;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 7:
+      case playerTurn == 6:
         indexToCheck = 6;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 8:
+      case playerTurn == 7:
         indexToCheck = 7;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 9:
+      case playerTurn == 8:
         indexToCheck = 8;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 10:
+      case playerTurn == 9:
         indexToCheck = 9;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 11:
+      case playerTurn == 10:
         indexToCheck = 10;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 12:
+      case playerTurn == 11:
         indexToCheck = 11;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 13:
+      case playerTurn == 12:
         indexToCheck = 12;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 14:
+      case playerTurn == 13:
         indexToCheck = 13;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 15:
+      case playerTurn == 14:
         indexToCheck = 14;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 16:
+      case playerTurn == 15:
         indexToCheck = 15;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 17:
+      case playerTurn == 16:
         indexToCheck = 16;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 18:
+      case playerTurn == 17:
         indexToCheck = 17;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 19:
+      case playerTurn == 18:
         indexToCheck = 18;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
         break;
 
-
-        case playerTurn == 20:
+      case playerTurn == 19:
         indexToCheck = 19;
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
+        startComputerMove();
+
+        break;
+
+      case playerTurn == 20:
+        indexToCheck = 20;
+        listenForFirstMove();
+        listenForSecondMove();
+        listenForThirdMove();
+        listenForFourthMove();
+        startComputerMove();
+        //alert win
         break;
 
     }
