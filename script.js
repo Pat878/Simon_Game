@@ -31,6 +31,7 @@ $(document).ready(function() {
 
   var computerTurn = 1;
   var playerTurn = 0;
+  var strict = false;
   var snd1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
   var snd2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
   var snd3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
@@ -267,30 +268,38 @@ $(document).ready(function() {
 
     function startComputerMove() {
       setTimeout(function() {
+
         var currentArray = arr.slice(0, indexToCheck)
         var currentPlayerArray =
           playerArray.slice(0, indexToCheck)
-        console.log(currentArray)
-        console.log(currentPlayerArray, true)
+
         if (currentPlayerArray.toString() == currentArray.toString()) {
           letsPlay()
-        } else {
-          alert("wrong")
+        } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
+          alert("Game over! Press start to play again!")
+          computerTurn = 1;
+          playerTurn = 0;
+          strict = false;
+        } else if (currentPlayerArray.toString() != currentArray.toString()) {
+          alert("Try again!")
+          playerArray.length = 0
+          currentPlayerArray.length = 0
+
+          computerTurn = computerTurn - 1
+          playerTurn = playerTurn - 1
+
+          letsPlay();
         }
       }, 10000)
     }
 
-    /*  var timer = setTimeout(function() {
-        alert("Too slow!")
-      }, 5000) */
-
     switch (true) {
       case playerTurn == 1:
+
         listenForFirstMove();
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
-
         startComputerMove();
 
         break;
@@ -491,6 +500,11 @@ $(document).ready(function() {
 
   $(".start").click(function() {
     letsPlay();
+
+  })
+
+  $(".strict").click(function() {
+    strict = true;
 
   })
 
