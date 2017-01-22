@@ -286,10 +286,11 @@ $(document).ready(function() {
           $(".count").empty()
           letsPlay()
         } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
-          alert("Game over! To play again in strict mode press Strict and then press start!")
+          alert("Game over! To play again in strict mode press Strict and then press Start!")
           computerTurn = 1;
           playerTurn = 0;
           strict = false;
+          arr = shuffle(arr);
 
           $(".count").empty()
         } else if (currentPlayerArray.toString() != currentArray.toString()) {
@@ -322,10 +323,11 @@ $(document).ready(function() {
           playerTurn = 0;
           strict = false;
         } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
-          alert("Game over! To play again in strict mode press Strict and then press start!")
+          alert("Game over! To play again in strict mode press Strict and then press Start!")
           computerTurn = 1;
           playerTurn = 0;
           strict = false;
+          arr = shuffle(arr);
 
           $(".count").empty()
         } else if (currentPlayerArray.toString() != currentArray.toString()) {
