@@ -101,21 +101,27 @@ $(document).ready(function() {
       theLoop()
     }
 
+    var turn = $(".count").css({"color": "yellow",  "vertical-align": "middle"
+}).append(computerTurn)
+
     switch (true) {
 
       case computerTurn == 1:
+        turn
         num = 1;
         call()
         playerMove();
         break;
 
       case computerTurn == 2:
+        turn
         num = 2;
         call()
         playerMove();
         break;
 
       case computerTurn == 3:
+        turn
         num = 3;
         call()
         playerMove();
@@ -274,14 +280,20 @@ $(document).ready(function() {
           playerArray.slice(0, indexToCheck)
 
         if (currentPlayerArray.toString() == currentArray.toString()) {
+
+        $(".count").empty()
           letsPlay()
         } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
           alert("Game over! Press start to play again!")
           computerTurn = 1;
           playerTurn = 0;
           strict = false;
+
+        $(".count").empty()
         } else if (currentPlayerArray.toString() != currentArray.toString()) {
           alert("Try again!")
+
+        $(".count").empty()
           playerArray.length = 0
           currentPlayerArray.length = 0
 
@@ -505,7 +517,7 @@ $(document).ready(function() {
 
   $(".strict").click(function() {
     strict = true;
+    })
 
-  })
 
 });
