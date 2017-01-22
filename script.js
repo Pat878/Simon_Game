@@ -101,8 +101,10 @@ $(document).ready(function() {
       theLoop()
     }
 
-    var turn = $(".count").css({"color": "yellow",  "vertical-align": "middle"
-}).append(computerTurn)
+    var turn = $(".count").css({
+      "color": "yellow",
+      "vertical-align": "middle"
+    }).append(computerTurn)
 
     switch (true) {
 
@@ -281,19 +283,55 @@ $(document).ready(function() {
 
         if (currentPlayerArray.toString() == currentArray.toString()) {
 
-        $(".count").empty()
+          $(".count").empty()
           letsPlay()
         } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
-          alert("Game over! Press start to play again!")
+          alert("Game over! To play again in strict mode press Strict and then press start!")
           computerTurn = 1;
           playerTurn = 0;
           strict = false;
 
-        $(".count").empty()
+          $(".count").empty()
         } else if (currentPlayerArray.toString() != currentArray.toString()) {
           alert("Try again!")
 
-        $(".count").empty()
+          $(".count").empty()
+          playerArray.length = 0
+          currentPlayerArray.length = 0
+
+          computerTurn = computerTurn - 1
+          playerTurn = playerTurn - 1
+
+          letsPlay();
+        }
+      }, 10000)
+    }
+
+    function checkForWin() {
+      setTimeout(function() {
+
+        var currentArray = arr.slice(0, indexToCheck)
+        var currentPlayerArray =
+          playerArray.slice(0, indexToCheck)
+
+        if (currentPlayerArray.toString() == currentArray.toString()) {
+
+          $(".count").empty()
+          alert("You win!")
+          computerTurn = 1;
+          playerTurn = 0;
+          strict = false;
+        } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
+          alert("Game over! To play again in strict mode press Strict and then press start!")
+          computerTurn = 1;
+          playerTurn = 0;
+          strict = false;
+
+          $(".count").empty()
+        } else if (currentPlayerArray.toString() != currentArray.toString()) {
+          alert("Try again!")
+
+          $(".count").empty()
           playerArray.length = 0
           currentPlayerArray.length = 0
 
@@ -502,8 +540,7 @@ $(document).ready(function() {
         listenForSecondMove();
         listenForThirdMove();
         listenForFourthMove();
-        startComputerMove();
-        //alert win
+        checkForWin();
         break;
 
     }
@@ -517,7 +554,6 @@ $(document).ready(function() {
 
   $(".strict").click(function() {
     strict = true;
-    })
-
+  })
 
 });
