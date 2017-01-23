@@ -287,12 +287,8 @@ $(document).ready(function() {
           letsPlay()
         } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
           alert("Game over! To play again in strict mode press Strict and then press Start!")
-          computerTurn = 1;
-          playerTurn = 0;
-          strict = false;
-          arr = shuffle(arr);
+          window.location.reload(true);
 
-          $(".count").empty()
         } else if (currentPlayerArray.toString() != currentArray.toString()) {
           alert("Try again!")
 
@@ -324,12 +320,8 @@ $(document).ready(function() {
           strict = false;
         } else if (strict == true && currentPlayerArray.toString() != currentArray.toString()) {
           alert("Game over! To play again in strict mode press Strict and then press Start!")
-          computerTurn = 1;
-          playerTurn = 0;
-          strict = false;
-          arr = shuffle(arr);
+          window.location.reload(true);
 
-          $(".count").empty()
         } else if (currentPlayerArray.toString() != currentArray.toString()) {
           alert("Try again!")
 
@@ -556,6 +548,11 @@ $(document).ready(function() {
 
   $(".strict").click(function() {
     strict = true;
+  })
+
+  $(".reset").click(function() {
+    window.location.reload(true);
+
   })
 
 });
