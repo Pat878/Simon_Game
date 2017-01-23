@@ -548,6 +548,7 @@ $(document).ready(function() {
 
   $(".strict").click(function() {
     strict = true;
+    alert("Srict mode activated! Now press Start to play!")
   })
 
   $(".reset").click(function() {
