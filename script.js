@@ -40,7 +40,7 @@ $(document).ready(function() {
   function firstMove() {
     $("#inner1").addClass("glow")
     snd1.play();
-    setTimeout(function() {
+      setTimeout(function() {
       $("#inner1").removeClass('glow');
     }, 500)
   }
@@ -274,6 +274,8 @@ $(document).ready(function() {
       })
     }
 
+    var timer = 5000;
+
     function startComputerMove() {
       setTimeout(function() {
 
@@ -301,7 +303,7 @@ $(document).ready(function() {
 
           letsPlay();
         }
-      }, 10000)
+      }, timer)
     }
 
     function checkForWin() {
@@ -334,7 +336,7 @@ $(document).ready(function() {
 
           letsPlay();
         }
-      }, 10000)
+      }, timer)
     }
 
     switch (true) {
