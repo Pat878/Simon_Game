@@ -40,7 +40,7 @@ $(document).ready(function() {
   function firstMove() {
     $("#inner1").addClass("glow")
     snd1.play();
-    var compTimer = setTimeout(function() {
+    setTimeout(function() {
       $("#inner1").removeClass('glow');
     }, 500)
   }
