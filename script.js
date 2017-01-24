@@ -40,7 +40,7 @@ $(document).ready(function() {
   function firstMove() {
     $("#inner1").addClass("glow")
     snd1.play();
-      setTimeout(function() {
+    setTimeout(function() {
       $("#inner1").removeClass('glow');
     }, 500)
   }
@@ -361,6 +361,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 3:
+        timer = 6000
         indexToCheck = 3;
         listenForFirstMove();
         listenForSecondMove();
@@ -371,6 +372,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 4:
+        timer = 7000
         indexToCheck = 4;
         listenForFirstMove();
         listenForSecondMove();
@@ -381,6 +383,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 5:
+        timer = 8000;
         indexToCheck = 5;
         listenForFirstMove();
         listenForSecondMove();
@@ -391,6 +394,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 6:
+        timer = 9000;
         indexToCheck = 6;
         listenForFirstMove();
         listenForSecondMove();
@@ -401,6 +405,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 7:
+        timer = 10000;
         indexToCheck = 7;
         listenForFirstMove();
         listenForSecondMove();
@@ -411,6 +416,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 8:
+        timer = 11000;
         indexToCheck = 8;
         listenForFirstMove();
         listenForSecondMove();
@@ -421,6 +427,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 9:
+        timer = 12000;
         indexToCheck = 9;
         listenForFirstMove();
         listenForSecondMove();
@@ -431,6 +438,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 10:
+        timer = 13000;
         indexToCheck = 10;
         listenForFirstMove();
         listenForSecondMove();
@@ -441,6 +449,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 11:
+        timer = 14000;
         indexToCheck = 11;
         listenForFirstMove();
         listenForSecondMove();
@@ -451,6 +460,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 12:
+        timer = 15000;
         indexToCheck = 12;
         listenForFirstMove();
         listenForSecondMove();
@@ -461,6 +471,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 13:
+        timer = 16000;
         indexToCheck = 13;
         listenForFirstMove();
         listenForSecondMove();
@@ -471,6 +482,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 14:
+        timer = 17000;
         indexToCheck = 14;
         listenForFirstMove();
         listenForSecondMove();
@@ -481,6 +493,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 15:
+        timer = 18000;
         indexToCheck = 15;
         listenForFirstMove();
         listenForSecondMove();
@@ -491,6 +504,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 16:
+        timer = 19000;
         indexToCheck = 16;
         listenForFirstMove();
         listenForSecondMove();
@@ -501,6 +515,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 17:
+        timer = 20000;
         indexToCheck = 17;
         listenForFirstMove();
         listenForSecondMove();
@@ -511,6 +526,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 18:
+        timer = 21000;
         indexToCheck = 18;
         listenForFirstMove();
         listenForSecondMove();
@@ -521,6 +537,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 19:
+        timer = 22000;
         indexToCheck = 19;
         listenForFirstMove();
         listenForSecondMove();
@@ -531,6 +548,7 @@ $(document).ready(function() {
         break;
 
       case playerTurn == 20:
+        timer = 23000;
         indexToCheck = 20;
         listenForFirstMove();
         listenForSecondMove();
