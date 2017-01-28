@@ -26,8 +26,6 @@ var arr = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1];
 arr = shuffle(arr);
 $(document).ready(function() {
 
-  /* var letsPlay, remove, playerMove; */
-
   var computerTurn = 1;
   var playerTurn = 0;
   var strict = false;
