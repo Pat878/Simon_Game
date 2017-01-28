@@ -242,9 +242,10 @@ $(document).ready(function() {
 
     var indexToCheck = 1;
 
+          computerTurn++
+
     function listenForFirstMove() {
 
-      computerTurn++
       document.getElementById("inner1").addEventListener("click", function() {
         playerArray.push(1)
         snd1.play()
