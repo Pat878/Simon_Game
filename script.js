@@ -24,7 +24,6 @@ function shuffle(array) {
 }
 var arr = [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1];
 arr = shuffle(arr);
-console.log(arr)
 $(document).ready(function() {
 
   /* var letsPlay, remove, playerMove; */
@@ -81,16 +80,12 @@ $(document).ready(function() {
         setTimeout(function() {
           if (arr[i] == 1) {
             firstMove()
-            console.log(1)
           } else if (arr[i] == 2) {
             secondMove()
-            console.log(2)
           } else if (arr[i] == 3) {
             thirdMove()
-            console.log(3)
           } else if (arr[i] == 4) {
             fourthMove()
-            console.log(4)
           }
           i++;
           if (i < num) {
@@ -242,7 +237,7 @@ $(document).ready(function() {
 
     var indexToCheck = 1;
 
-          computerTurn++
+    computerTurn++
 
     function listenForFirstMove() {
 
@@ -276,8 +271,6 @@ $(document).ready(function() {
         fourthMove();
       })
     }
-
-    console.log(timer)
 
     function startComputerMove() {
       setTimeout(function() {
